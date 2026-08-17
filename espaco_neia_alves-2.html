@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Espaço Néia Alves | Manicure e Pedicure em Perdigão</title>
+  <meta name="description" content="Espaço Néia Alves em Perdigão/MG. Manicure, pedicure e cuidados com suas unhas. Agende seu horário pelo WhatsApp." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fffaf8;--bg-soft:#f8efeb;--card:#fff;--text:#302826;--muted:#786b67;
+      --primary:#a96c68;--primary-dark:#87504c;--accent:#d9aaa4;--border:#eadad6;
+      --shadow:0 18px 50px rgba(73,43,39,.10)
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:100;background:rgba(255,250,248,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(234,218,214,.8)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:"Playfair Display",serif;font-size:25px;font-weight:700}.brand span{color:var(--primary)}
+    .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600}.nav-links a:hover{color:var(--primary)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:0 24px;border-radius:999px;font-weight:700;transition:.2s;border:0;cursor:pointer}
+    .btn-primary{background:var(--primary);color:#fff;box-shadow:0 12px 28px rgba(169,108,104,.25)}
+    .btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+    .btn-outline{border:1px solid var(--border);background:#fff}.btn-outline:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .hero{position:relative;overflow:hidden;padding:100px 0 85px}
+    .hero:before{content:"";position:absolute;width:550px;height:550px;border-radius:50%;background:#f0dcd7;filter:blur(8px);right:-200px;top:-180px;opacity:.7;z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
+    .eyebrow{display:inline-flex;padding:7px 13px;background:#f4e5e1;color:var(--primary-dark);border-radius:999px;font-size:13px;font-weight:700;margin-bottom:22px}
+    h1,h2{font-family:"Playfair Display",serif;line-height:1.07}
+    h1{font-size:clamp(48px,6vw,76px);letter-spacing:-2px;margin-bottom:24px}h1 span{color:var(--primary)}
+    .hero p{max-width:620px;font-size:18px;color:var(--muted);margin-bottom:32px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+    .hero-meta{display:flex;gap:30px;flex-wrap:wrap;margin-top:34px;color:var(--muted);font-size:14px}.hero-meta strong{color:var(--text)}
+    .hero-card{min-height:520px;border-radius:32px;background:linear-gradient(rgba(46,30,28,.18),rgba(46,30,28,.45)),url("https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=85") center/cover;box-shadow:var(--shadow);display:flex;align-items:flex-end;overflow:hidden}
+    .hero-card-content{padding:32px;color:#fff}.hero-card-content small{display:block;opacity:.85;margin-bottom:6px}.hero-card-content strong{font-size:25px;font-family:"Playfair Display",serif}
+    section{padding:90px 0}.section-head{max-width:680px;margin-bottom:46px}.section-head span{color:var(--primary);font-weight:700;font-size:14px}
+    .section-head h2{font-size:clamp(35px,5vw,50px);margin:10px 0 16px}.section-head p{color:var(--muted);font-size:17px}
+    .services{background:#fff}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service{background:var(--bg);border:1px solid var(--border);border-radius:22px;padding:30px;transition:.2s}.service:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .service-icon{width:50px;height:50px;border-radius:15px;background:#f3e0dc;display:grid;place-items:center;font-size:23px;margin-bottom:22px}
+    .service h3{font-size:19px;margin-bottom:9px}.service p{color:var(--muted);font-size:15px}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+    .about-image{min-height:480px;border-radius:28px;background:url("https://images.unsplash.com/photo-1610992015732-2449b76344bc?auto=format&fit=crop&w=1100&q=85") center/cover;box-shadow:var(--shadow)}
+    .about-content h2{font-size:clamp(37px,5vw,52px);margin-bottom:22px}.about-content p{color:var(--muted);margin-bottom:18px;font-size:17px}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:30px}.feature{display:flex;gap:11px;align-items:center;font-weight:600}
+    .check{width:28px;height:28px;border-radius:50%;background:#f0dedb;color:var(--primary-dark);display:grid;place-items:center;flex:0 0 auto}
+    .rating-section{background:var(--primary);color:#fff}.rating-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .rating-number{font-family:"Playfair Display",serif;font-size:100px;line-height:1}.stars{font-size:25px;letter-spacing:3px;margin:10px 0}.rating-section p{opacity:.85}
+    .rating-text h2{font-size:44px;margin-bottom:20px}
+    .contact-grid{display:grid;grid-template-columns:1fr .9fr;gap:30px}
+    .contact-card,.hours-card{background:#fff;border:1px solid var(--border);border-radius:24px;padding:34px}
+    .contact-item{padding:20px 0;border-bottom:1px solid var(--border)}.contact-item:last-child{border-bottom:0}
+    .contact-label{color:var(--muted);font-size:13px;margin-bottom:4px;text-transform:uppercase;letter-spacing:.6px}.contact-value{font-weight:700;font-size:17px}
+    .hours-row{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--border)}.hours-row:last-child{border-bottom:0}.hours-row span:last-child{font-weight:600}
+    .cta{padding-top:20px}.cta-box{background:var(--text);color:#fff;border-radius:32px;padding:55px;display:flex;justify-content:space-between;align-items:center;gap:40px}
+    .cta-box h2{font-size:40px;margin-bottom:12px}.cta-box p{color:#d2c8c5}
+    footer{padding:40px 0;color:var(--muted);font-size:14px}.footer-content{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    .whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:90;background:#25d366;color:#fff;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 12px 35px rgba(0,0,0,.2);transition:.2s}.whatsapp-float:hover{transform:scale(1.07)}
+    @media(max-width:850px){
+      .nav-links{display:none}.hero{padding-top:65px}.hero-grid,.about-grid,.rating-wrap,.contact-grid{grid-template-columns:1fr}
+      .hero-card{min-height:430px}.service-grid{grid-template-columns:1fr}.features{grid-template-columns:1fr}.about-image{min-height:380px}
+      .cta-box{padding:35px 25px;flex-direction:column;align-items:flex-start}.rating-number{font-size:80px}
+    }
+    @media(max-width:500px){.container{width:min(100% - 26px,1120px)}h1{font-size:46px}.hero-actions .btn{width:100%}.hero-meta{gap:18px}section{padding:70px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a href="#" class="brand">Espaço <span>Néia Alves</span></a>
+    <nav class="nav-links">
+      <a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a><a href="https://www.instagram.com/neiaalves52/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn-primary" href="https://wa.me/5537999995427" target="_blank">Agendar horário</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Manicure e Pedicure em Perdigão</span>
+      <h1>Seu momento de <span>cuidado.</span></h1>
+      <p>Cuidados com suas unhas em um atendimento dedicado, pensado para valorizar sua beleza e deixar cada detalhe ainda mais especial.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5537999995427?text=Olá%20Néia!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-primary" target="_blank">Agendar pelo WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rua+Geraldo+Luis+do+Bonfim+10+Santo+Agostinho+Perdigao+MG" class="btn btn-outline" target="_blank" rel="noopener">Ver no Google Maps</a>
+      </div>
+      <div class="hero-meta">
+        <div>⭐ <strong>5,0</strong><br>Avaliação no Google</div>
+        <div>📍 <strong>Perdigão/MG</strong><br>Santo Agostinho</div>
+      </div>
+    </div>
+    <div class="hero-card"><div class="hero-card-content"><small>Espaço Néia Alves</small><strong>Beleza nos detalhes.</strong></div></div>
+  </div>
+</section>
+
+<section id="servicos" class="services">
+  <div class="container">
+    <div class="section-head"><span>SERVIÇOS</span><h2>Cuidados para suas unhas</h2><p>Atendimento pensado para quem valoriza unhas bonitas, bem cuidadas e um momento dedicado a si mesma.</p></div>
+    <div class="service-grid">
+      <article class="service"><div class="service-icon">💅</div><h3>Manicure</h3><p>Cuidados completos para deixar suas mãos e unhas bonitas e bem cuidadas.</p></article>
+      <article class="service"><div class="service-icon">✨</div><h3>Pedicure</h3><p>Cuidado e acabamento para os pés, com atenção especial a cada detalhe.</p></article>
+      <article class="service"><div class="service-icon">🌸</div><h3>Nail Design</h3><p>Detalhes e estilos para deixar suas unhas ainda mais bonitas e com personalidade.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="container about-grid">
+    <div class="about-image"></div>
+    <div class="about-content">
+      <span class="eyebrow">ESPAÇO NÉIA ALVES</span>
+      <h2>Cuidado que aparece em cada detalhe.</h2>
+      <p>O Espaço Néia Alves oferece serviços de manicure, pedicure e cuidados com unhas em Perdigão.</p>
+      <p>Um atendimento próximo e dedicado, pensado para transformar o cuidado com as unhas em um momento especial da sua rotina.</p>
+      <div class="features">
+        <div class="feature"><div class="check">✓</div>Atendimento personalizado</div>
+        <div class="feature"><div class="check">✓</div>Horários flexíveis</div>
+        <div class="feature"><div class="check">✓</div>Localização em Perdigão</div>
+        <div class="feature"><div class="check">✓</div>Agendamento pelo WhatsApp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rating-section">
+  <div class="container rating-wrap">
+    <div><div class="rating-number">5,0</div><div class="stars">★★★★★</div><p>Avaliação cadastrada no Google.</p></div>
+    <div class="rating-text"><h2>Um espaço bem avaliado por quem já conhece.</h2><p>Conheça o trabalho do Espaço Néia Alves e agende seu próximo horário.</p></div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="container">
+    <div class="section-head"><span>CONTATO</span><h2>Agende seu horário</h2><p>Entre em contato pelo WhatsApp ou visite o Espaço Néia Alves em Perdigão.</p></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-item"><div class="contact-label">WhatsApp / Telefone</div><div class="contact-value">(37) 99999-5427</div></div>
+        <div class="contact-item"><div class="contact-label">Endereço</div><div class="contact-value">Rua Geraldo Luis do Bonfim, 10<br>Santo Agostinho — Perdigão/MG</div></div>
+        <div class="contact-item"><div class="contact-label">CEP</div><div class="contact-value">35545-000</div></div>
+        <div class="contact-item"><div class="contact-label">Instagram</div><div class="contact-value"><a href="https://www.instagram.com/neiaalves52/" target="_blank" rel="noopener">@neiaalves52</a></div></div>
+        <div style="margin-top:25px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://wa.me/5537999995427?text=Olá%20Néia!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-primary" target="_blank">Chamar no WhatsApp</a>
+          <a href="https://www.instagram.com/neiaalves52/" class="btn btn-outline" target="_blank" rel="noopener">Ver Instagram</a>
+        </div>
+      </div>
+      <div class="hours-card">
+        <h3 style="font-size:23px;margin-bottom:18px">Horário de atendimento</h3>
+        <div class="hours-row"><span>Segunda-feira</span><span>07:00 — 20:00</span></div>
+        <div class="hours-row"><span>Terça-feira</span><span>07:00 — 20:00</span></div>
+        <div class="hours-row"><span>Quarta-feira</span><span>07:00 — 20:00</span></div>
+        <div class="hours-row"><span>Quinta-feira</span><span>07:00 — 20:00</span></div>
+        <div class="hours-row"><span>Sexta-feira</span><span>07:00 — 20:00</span></div>
+        <div class="hours-row"><span>Sábado</span><span>07:00 — 17:00</span></div>
+        <div class="hours-row"><span>Domingo</span><span>Fechado</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="localizacao" style="padding-top:20px">
+  <div class="container">
+    <div class="section-head">
+      <span>LOCALIZAÇÃO</span>
+      <h2>Encontre o Espaço Néia Alves</h2>
+      <p>Rua Geraldo Luis do Bonfim, 10 — Santo Agostinho, Perdigão/MG.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:28px;overflow:hidden;box-shadow:var(--shadow)">
+      <iframe
+        src="https://www.google.com/maps?q=Rua%20Geraldo%20Luis%20do%20Bonfim%2010%2C%20Santo%20Agostinho%2C%20Perdigao%20MG&output=embed"
+        width="100%"
+        height="430"
+        style="border:0;display:block"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Mapa do Espaço Néia Alves">
+      </iframe>
+    </div>
+
+    <div style="margin-top:20px">
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Rua+Geraldo+Luis+do+Bonfim+10+Santo+Agostinho+Perdigao+MG"
+        class="btn btn-outline"
+        target="_blank"
+        rel="noopener"
+      >
+        Abrir rota no Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <div><h2>Vamos cuidar das suas unhas?</h2><p>Fale diretamente com a Néia e consulte os horários disponíveis.</p></div>
+      <a href="https://wa.me/5537999995427?text=Olá%20Néia!%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20um%20horário." class="btn btn-primary" target="_blank">Agendar agora</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="container footer-content"><div><strong>Espaço Néia Alves</strong><br>Manicure e Pedicure • Perdigão/MG<br><a href="https://www.instagram.com/neiaalves52/" target="_blank" rel="noopener">@neiaalves52</a></div><div>© 2026 Espaço Néia Alves</div></div></footer>
+
+<a href="https://wa.me/5537999995427?text=Olá%20Néia!%20Gostaria%20de%20agendar%20um%20horário." class="whatsapp-float" target="_blank" aria-label="WhatsApp">☎</a>
+</body>
+</html>
